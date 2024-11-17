@@ -1,0 +1,29 @@
+<!-- 
+    Product Search Form by Brand.
+    
+    Made by Abdullah Alojado
+-->
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+  <body>
+    <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+
+    <div class="formContainer">
+      <h3>Product Search Form</h3>
+      <p>To search the database for products by product brand,</p>
+      <p>Please enter the product brand:</p>
+
+      <form method="post" th:action="@{/ProductSearch/postSearchProductsByBrand}" action="#">
+        <div>
+          <label for="productBrand">Product Brand:</label>
+          <input type="text" name="productBrand" id="productBrand" />
+        </div>
+		<div th:replace="~{/fragments/generalFragments.html :: formButtons}"></div>
+      </form>
+    </div>
+
+    <div th:replace="~{/fragments/generalFragments.html :: footer}"></div>
+  </body>
+</html>

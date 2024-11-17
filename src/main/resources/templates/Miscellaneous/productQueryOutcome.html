@@ -1,0 +1,23 @@
+<!--
+    Displays the outcome after a SQL operation.
+    
+    Made by Abdullah Alojado
+-->
+
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+    <body>
+        <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+        <div class="queryContainer">
+        <h3>Product Query Outcome:</h3>
+
+        <p th:text="${message}"></p>
+        
+        <a href="/ProductView/getViewProducts">View Products</a>
+        </div>
+
+        <footer th:replace="~{/fragments/generalFragments.html :: footer}"></footer>
+    </body>
+</html>

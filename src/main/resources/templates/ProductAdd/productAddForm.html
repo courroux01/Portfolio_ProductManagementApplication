@@ -1,0 +1,75 @@
+<!--
+    Product Add Form.
+    
+    Made by Abdullah Alojado
+-->
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+  <body>
+    <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+    <div class="formContainer">
+      <h3>Product Add Form</h3>
+      <p>Please Input Product Data Below.</p>
+
+      <form th:action="@{/ProductAdd/postAddProduct}" th:object="${product}" method="POST">
+        <div>
+          <label for="productCode">Product Code:</label>
+          <input
+            th:field="*{productCode}"
+            required
+            type="text"
+            id="productCode"
+            name="productCode"
+            placeholder="A0B1C2"
+          />
+        </div>
+
+        <div>
+          <label for="productBrand">Product Brand:</label>
+          <input
+            th:field="*{productBrand}"
+            required
+            type="text"
+            id="productBrand"
+            name="productBrand"
+            placeholder="Dolce and Gabbana"
+          />
+        </div>
+
+        <div>
+          <label for="productQuantity">Product Quantity:</label>
+          <input
+            th:field="*{productQuantity}"
+            required
+            type="number"
+            id="productQuantity"
+            name="productQuantity"
+            placeholder="7"
+            min="0"
+            step="1"
+          />
+        </div>
+
+        <div>
+          <label for="productUnitPrice">Product Unit Price:</label>
+          <input
+            th:field="*{productUnitPrice}"
+            required
+            type="number"
+            id="productUnitPrice"
+            name="productUnitPrice"
+            placeholder="12.34"
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <div th:replace="~{/fragments/generalFragments.html :: formButtons}"></div>
+      </form>
+    </div>
+
+    <footer th:replace="~{/fragments/generalFragments.html :: footer}"></footer>
+  </body>
+</html>

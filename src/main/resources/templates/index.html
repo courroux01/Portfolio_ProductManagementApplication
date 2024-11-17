@@ -1,0 +1,23 @@
+<!--
+    Starting page for the user.
+    
+    Made by Abdullah Alojado
+-->
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+  <body>
+    <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+
+    <nav class="indexNav">
+      <a href="/ProductAdd/getAddProduct">Add a Product</a><br />
+      <a href="/ProductView/getViewProducts">View All Products</a><br />
+      <a href="/ProductView/getViewEditableProducts">Edit Products</a><br />
+      <a href="/ProductSearch/getSearchProductsByBrand">Search a Product By Brand</a><br />
+      <a href="/ProductSearch/getSearchProductsByQuantity">Search a Product By Quantity</a><br />
+    </nav>
+
+    <footer th:replace="~{/fragments/generalFragments.html :: footer}"></footer>
+  </body>
+</html>

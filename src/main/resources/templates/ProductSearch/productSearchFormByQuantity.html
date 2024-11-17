@@ -1,0 +1,30 @@
+<!-- 
+	Product Search Form by Quantity.
+    
+    Made by Abdullah Alojado
+-->
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+  <body>
+    <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+    <div class="formContainer">
+      <h3>Product Search Form</h3>
+      <p>
+        To search the database for products where quantity is less than a
+        certain amount,
+      </p>
+      <p>Please enter the quantity:</p>
+
+      <form method="post" th:action="@{/ProductSearch/postSearchProductsByQuantity}" action="#">
+        <div>
+          <label for="productQuantity">Product Quantity:</label>
+          <input type="number" name="productQuantity" id="productQuantity" />
+        </div>
+		<div th:replace="~{/fragments/generalFragments.html :: formButtons}"></div>
+    </div>
+
+    <div th:replace="~{/fragments/generalFragments.html :: footer}"></div>
+  </body>
+</html>

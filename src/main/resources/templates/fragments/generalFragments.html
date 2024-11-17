@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="head">
+    <!-- Header metadata and stylesheet link -->
+    <meta charset="UTF-8" />
+    <title>Product Control Management System</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+  </head>
+  
+  <header th:fragment="header" class="fragmentHeader">
+    <!-- Page header with title and navigation -->
+    <h1>Product Control Management System</h1>
+    
+    <!-- Replacing the logout fragment -->
+    <a th:replace="~{/fragments/logout :: logoutA}">Log Out</a> <!-- Logout hyperlink -->
+    <form th:replace="~{/fragments/logout :: logoutForm}"></form> <!-- Logout form -->
+
+    <a href="/index">Home</a>
+  </header>
+
+  <div th:fragment="headerDivWithoutHome" class="fragmentHeaderDivWithoutHome">
+    <header th:fragment="headerWithoutHome">
+      <!-- Page header with title and navigation -->
+      <h1>Product Control Management System</h1>
+    </header>
+  </div>
+
+  <div th:fragment="formButtons" class="fragmentFormButtons">
+    <!-- Form buttons for submitting and resetting -->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+
+  <!-- Footer with course and author information -->
+  <footer th:fragment="footer" class="fragmentFooter">
+    <p>PROG32758 Enterprise Java Development Fall 2024</p>
+    <p>Abdullah Alojado</p>
+  </footer>
+</html>

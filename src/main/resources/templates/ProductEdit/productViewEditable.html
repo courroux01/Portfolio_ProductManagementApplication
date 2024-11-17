@@ -1,0 +1,44 @@
+<!--
+    Displays data the application gets from the user.
+    
+    Made by Abdullah Alojado
+-->
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{/fragments/generalFragments.html :: head}"></head>
+  <body>
+    <header th:replace="~{/fragments/generalFragments.html :: header}"></header>
+    <div class="productListContainer">
+      <h3>Editable Product List:</h3>
+
+      <div class="tableContainer">
+        <table>
+          <tr>
+            <th>Product Code</th>
+            <th>Product Brand</th>
+            <th>Product Quantity</th>
+            <th>Product Unit Price</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+
+          <tr th:each="product : ${products}">
+            <td th:text="${product.productCode}"></td>
+            <td th:text="${product.productBrand}"></td>
+            <td th:text="${product.productQuantity}"></td>
+            <td th:text="${product.productUnitPrice}"></td>
+            <td>
+              <a th:href="@{/ProductEdit/getEditProduct/}+${product.getId()}">EDIT</a>
+            </td>
+            <td>
+              <a th:href="@{/ProductDelete/getDeleteProduct/}+${product.getId()}">DELETE</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <footer th:replace="~{/fragments/generalFragments.html :: footer}"></footer>
+  </body>
+</html>
